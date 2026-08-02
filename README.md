@@ -64,3 +64,4 @@ npm run start
 
 The project has been verified to build cleanly (`next build`) and pass `next lint` with zero
 warnings.
+# juaraku-landing-page
