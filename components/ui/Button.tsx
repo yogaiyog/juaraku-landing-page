@@ -10,6 +10,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   icon?: ReactNode;
   href?: string;
+  target?: string;
+  rel?: string;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -28,6 +30,8 @@ export function Button({
   variant = "primary",
   icon,
   href,
+  target,
+  rel,
   className,
   children,
   ...props
@@ -52,7 +56,13 @@ export function Button({
 
   if (href) {
     return (
-      <a href={href} className="inline-block" aria-label={typeof children === "string" ? children : undefined}>
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        className="inline-block"
+        aria-label={typeof children === "string" ? children : undefined}
+      >
         {content}
       </a>
     );

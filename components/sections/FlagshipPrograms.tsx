@@ -4,28 +4,26 @@ import { motion } from "framer-motion";
 import { Laptop, Gamepad2, CheckCircle2 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { flagshipPrograms } from "@/lib/data";
 import { cn } from "@/lib/utils";
-
-type Program = (typeof flagshipPrograms)[number];
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
 /**
  * Flagship Programs — the two capstone tracks students choose between:
  * VibeCoder App (web/mobile) and VibeCoder Game (game development).
  */
-export function FlagshipPrograms() {
+export function FlagshipPrograms({ dict }: { dict: Dictionary["programs"] }) {
   return (
     <section id="programs" className="relative bg-surface-soft py-20 sm:py-28">
       <div className="section-shell flex flex-col gap-14">
         <SectionHeading
-          eyebrow="Flagship Programs"
-          title="Where Learning Becomes Real Creation"
-          description="Every JuaraKu student works toward one of two capstone tracks — building portfolio-ready projects with real code and real AI tools."
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          description={dict.description}
         />
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {flagshipPrograms.map((program, i) => (
-            <ProgramCard key={program.id} program={program} index={i} />
+          {dict.items.map((program, i) => (
+            <ProgramCard key={program.id} program={program} index={i} dict={dict} />
           ))}
         </div>
       </div>
@@ -36,9 +34,11 @@ export function FlagshipPrograms() {
 function ProgramCard({
   program,
   index,
+  dict,
 }: {
-  program: Program;
+  program: Dictionary["programs"]["items"][number];
   index: number;
+  dict: Dictionary["programs"];
 }) {
   const isBlue = program.accent === "blue";
 
@@ -85,7 +85,7 @@ function ProgramCard({
 
       <div className="mt-6">
         <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink/50">
-          Student projects
+          {dict.studentProjectsLabel}
         </p>
         <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           {program.projects.map((project) => (
@@ -105,7 +105,7 @@ function ProgramCard({
 
       <div className="mt-8">
         <Button variant={isBlue ? "primary" : "secondary"} href="#roadmap">
-          Explore {program.name}
+          {dict.explorePrefix} {program.name}
         </Button>
       </div>
     </motion.div>

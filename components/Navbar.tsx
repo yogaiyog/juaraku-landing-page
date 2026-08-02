@@ -5,14 +5,22 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
-import { navLinks } from "@/lib/data";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { whatsappHref } from "@/lib/config";
 import { cn } from "@/lib/utils";
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
 /**
  * Sticky top navigation. Gains a soft glass background once the page is
  * scrolled, and collapses into a slide-down menu on small screens.
  */
-export function Navbar() {
+export function Navbar({
+  dict,
+  ui,
+}: {
+  dict: Dictionary["navbar"];
+  ui: Dictionary["ui"];
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -32,14 +40,14 @@ export function Navbar() {
     >
       <nav
         className="section-shell flex items-center justify-between py-4"
-        aria-label="Main navigation"
+        aria-label={dict.mainNavLabel}
       >
         <a href="#top" className="shrink-0">
           <Logo />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+          {dict.links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -51,9 +59,15 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
-          <Button href="#final-cta" className="!px-6 !py-2.5 !text-sm">
-            Start Learning
+        <div className="hidden items-center gap-3 md:flex">
+          <LanguageSwitcher />
+          <Button
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="!px-6 !py-2.5 !text-sm"
+          >
+            {dict.startLearning}
           </Button>
         </div>
 
@@ -61,7 +75,7 @@ export function Navbar() {
           type="button"
           className="inline-flex items-center justify-center rounded-full p-2 text-brand-blue-deep md:hidden"
           aria-expanded={mobileOpen}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-label={mobileOpen ? dict.closeMenuLabel : dict.openMenuLabel}
           onClick={() => setMobileOpen((v) => !v)}
         >
           {mobileOpen ? <X size={26} /> : <Menu size={26} />}
@@ -76,7 +90,7 @@ export function Navbar() {
           className="glass-panel md:hidden"
         >
           <ul className="section-shell flex flex-col gap-1 pb-6 pt-2">
-            {navLinks.map((link) => (
+            {dict.links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
@@ -87,9 +101,17 @@ export function Navbar() {
                 </a>
               </li>
             ))}
+            <li className="flex justify-start px-3 py-2">
+              <LanguageSwitcher />
+            </li>
             <li className="pt-2">
-              <Button href="#final-cta" className="w-full">
-                Start Learning
+              <Button
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                {dict.startLearning}
               </Button>
             </li>
           </ul>

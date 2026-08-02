@@ -4,28 +4,28 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { faqs } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
 /**
  * Accessible accordion built with native button semantics + aria-expanded /
  * aria-controls, so it works for keyboard and screen-reader users without
  * any extra library.
  */
-export function FAQ() {
+export function FAQ({ dict }: { dict: Dictionary["faq"] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section id="faq" className="relative py-20 sm:py-28">
       <div className="section-shell flex flex-col gap-12">
         <SectionHeading
-          eyebrow="Questions, Answered"
-          title="Frequently Asked Questions"
+          eyebrow={dict.eyebrow}
+          title={dict.title}
           align="left"
         />
 
         <div className="mx-auto w-full max-w-3xl divide-y divide-black/5 rounded-3xl border border-black/5 bg-white shadow-card">
-          {faqs.map((item, index) => {
+          {dict.items.map((item, index) => {
             const isOpen = openIndex === index;
             const panelId = `faq-panel-${index}`;
             const buttonId = `faq-button-${index}`;

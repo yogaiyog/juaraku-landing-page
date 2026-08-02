@@ -1,6 +1,8 @@
 import { Instagram, MessageCircle, Mail } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
-import { footerLinks } from "@/lib/data";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { whatsappHref } from "@/lib/config";
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
 const contactIcons: Record<string, React.ElementType> = {
   Instagram,
@@ -12,7 +14,7 @@ const contactIcons: Record<string, React.ElementType> = {
  * Site footer: brand recap, sitemap links, contact channels, and copyright.
  * Marked as a semantic <footer> landmark for assistive technology.
  */
-export function Footer() {
+export function Footer({ dict }: { dict: Dictionary["footer"] }) {
   const year = new Date().getFullYear();
 
   return (
@@ -21,17 +23,16 @@ export function Footer() {
         <div className="flex flex-col gap-4">
           <Logo />
           <p className="max-w-xs text-sm leading-relaxed text-ink/70">
-            Helping children become creators of technology through coding, AI, and
-            project-based learning.
+            {dict.tagline}
           </p>
         </div>
 
-        <nav aria-label="Footer navigation">
+        <nav aria-label={dict.exploreHeading}>
           <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-ink/50">
-            Explore
+            {dict.exploreHeading}
           </h3>
           <ul className="flex flex-col gap-3">
-            {footerLinks.company.map((link) => (
+            {dict.links.company.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
@@ -46,18 +47,19 @@ export function Footer() {
 
         <div>
           <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-ink/50">
-            Contact
+            {dict.contactHeading}
           </h3>
           <ul className="flex flex-col gap-3">
-            {footerLinks.contact.map((link) => {
+            {dict.links.contact.map((link) => {
               const Icon = contactIcons[link.label] ?? Mail;
+              const href = link.label === "WhatsApp" ? whatsappHref : link.href;
               return (
                 <li key={link.href}>
                   <a
-                    href={link.href}
+                    href={href}
                     className="flex items-center gap-2 text-sm font-medium text-ink/75 hover:text-brand-blue-deep"
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     <Icon size={16} aria-hidden="true" />
                     {link.label}
@@ -70,9 +72,12 @@ export function Footer() {
       </div>
 
       <div className="border-t border-black/5 py-6">
-        <p className="section-shell text-center text-xs text-ink/50">
-          © {year} JuaraKu. All rights reserved.
-        </p>
+        <div className="section-shell flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <p className="text-center text-xs text-ink/50">
+            © {year} JuaraKu. {dict.rights}
+          </p>
+          <LanguageSwitcher />
+        </div>
       </div>
     </footer>
   );

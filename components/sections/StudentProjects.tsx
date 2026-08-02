@@ -1,32 +1,36 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Gamepad2, Code2, Globe, Sparkles, Joystick, Cpu } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { studentProjects } from "@/lib/data";
-import { cn } from "@/lib/utils";
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
-const thumbnailIcons = [Gamepad2, Code2, Globe, Sparkles, Joystick, Cpu];
+const thumbnailImages = [
+  "/images/project-card/scratch.png",
+  "/images/project-card/python.png",
+  "/images/project-card/website.png",
+  "/images/project-card/ai.png",
+  "/images/project-card/gamedev.png",
+  "/images/project-card/robotika.png",
+];
 
 /**
  * Large showcase cards for the categories of projects JuaraKu students
  * build. Thumbnails are illustrative gradient panels with a representative
  * icon (no stock photography required, keeps the page fast and consistent).
  */
-export function StudentProjects() {
+export function StudentProjects({ dict }: { dict: Dictionary["projects"] }) {
   return (
     <section className="relative py-20 sm:py-28">
       <div className="section-shell flex flex-col gap-14">
         <SectionHeading
-          eyebrow="Student Work"
-          title="Real Projects, Built by Real Students"
-          description="A glimpse of what JuaraKu students create — from their very first Scratch game to full AI-powered applications."
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          description={dict.description}
         />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {studentProjects.map((project, i) => {
-            const Icon = thumbnailIcons[i % thumbnailIcons.length];
-            const isGold = project.color === "gold";
+          {dict.items.map((project, i) => {
             return (
               <motion.article
                 key={project.category}
@@ -38,15 +42,14 @@ export function StudentProjects() {
                 className="overflow-hidden rounded-3xl border border-black/5 bg-white shadow-card transition-shadow hover:shadow-lift"
               >
                 {/* Thumbnail */}
-                <div
-                  className={cn(
-                    "flex h-40 items-center justify-center",
-                    isGold
-                      ? "bg-gradient-to-br from-brand-gold-light/70 to-brand-gold"
-                      : "bg-brand-gradient"
-                  )}
-                >
-                  <Icon size={48} className={isGold ? "text-brand-blue-royal" : "text-white"} strokeWidth={1.75} />
+                <div className="relative h-40 w-full overflow-hidden bg-surface-mist">
+                  <Image
+                    src={thumbnailImages[i % thumbnailImages.length]}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
 
                 <div className="flex flex-col gap-3 p-6">

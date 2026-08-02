@@ -1,13 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 /**
- * Hand-built SVG hero illustration: a central "kid at laptop" scene
- * surrounded by floating badges (AI robot, medal, rocket, code blocks,
- * graduation cap, game controller, Python-style mark, Scratch-style mark).
- * Everything is flat SVG + CSS transforms — no 3D engine, no raster image —
- * per the "no Three.js / no canvas 3D" constraint.
+ * Hero illustration: a central "kid at laptop" image surrounded by floating
+ * badges (AI robot, medal, rocket, code block, game controller, Python mark,
+ * sparkle). The floating badges are hand-built SVG + CSS transforms.
  */
 export function HeroIllustration() {
   return (
@@ -17,41 +16,18 @@ export function HeroIllustration() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="absolute inset-x-8 bottom-6 top-10 flex items-end justify-center"
+        className="absolute inset-x-6 bottom-6 top-10 flex items-center justify-center"
       >
-        <svg viewBox="0 0 320 320" className="h-full w-full drop-shadow-2xl">
-          {/* soft ground shadow */}
-          <ellipse cx="160" cy="300" rx="110" ry="14" fill="#0B5FAF" opacity="0.08" />
-
-          {/* Desk */}
-          <rect x="70" y="230" width="180" height="14" rx="7" fill="#1E4AA8" />
-          <rect x="90" y="244" width="14" height="46" rx="4" fill="#1E4AA8" />
-          <rect x="216" y="244" width="14" height="46" rx="4" fill="#1E4AA8" />
-
-          {/* Laptop */}
-          <rect x="118" y="176" width="84" height="56" rx="8" fill="#0B5FAF" />
-          <rect x="126" y="184" width="68" height="40" rx="4" fill="#EAF3FC" />
-          {/* code lines on screen */}
-          <rect x="132" y="190" width="30" height="4" rx="2" fill="#1E78C8" />
-          <rect x="132" y="198" width="46" height="4" rx="2" fill="#F6B800" />
-          <rect x="132" y="206" width="22" height="4" rx="2" fill="#1E78C8" />
-          <rect x="102" y="230" width="116" height="8" rx="4" fill="#1E4AA8" />
-
-          {/* Child silhouette (friendly, simple, non-identifiable) */}
-          <circle cx="160" cy="150" r="22" fill="#FFC83D" />
-          <path
-            d="M126 232C126 202 140 186 160 186C180 186 194 202 194 232"
-            fill="#1E78C8"
+        <div className="relative aspect-[3/2] w-full max-w-md">
+          <Image
+            src="/images/Hero.png"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-contain drop-shadow-2xl"
           />
-          <path d="M138 168 Q160 156 182 168 L182 178 Q160 168 138 178 Z" fill="#0B5FAF" />
-
-          {/* Graduation cap floating just above child's head */}
-          <g transform="translate(132,96)">
-            <path d="M28 0 L56 12 L28 24 L0 12 Z" fill="#1E4AA8" />
-            <rect x="24" y="12" width="8" height="14" rx="2" fill="#1E4AA8" />
-            <circle cx="52" cy="16" r="3" fill="#F6B800" />
-          </g>
-        </svg>
+        </div>
       </motion.div>
 
       {/* Floating: AI robot */}

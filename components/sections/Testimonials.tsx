@@ -1,26 +1,27 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { testimonials } from "@/lib/data";
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
 /**
  * Social proof from parents and students. Avatars are initials-based
  * placeholders (no stock photography of real people, per brand guidance to
  * avoid depicting real individuals).
  */
-export function Testimonials() {
+export function Testimonials({ dict }: { dict: Dictionary["testimonials"] }) {
   return (
     <section className="relative bg-surface-soft py-20 sm:py-28">
       <div className="section-shell flex flex-col gap-14">
         <SectionHeading
-          eyebrow="What Families Say"
-          title="Trusted by Parents, Loved by Kids"
+          eyebrow={dict.eyebrow}
+          title={dict.title}
         />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
+          {dict.items.map((t, i) => (
             <motion.figure
               key={t.name}
               initial={{ opacity: 0, y: 24 }}
@@ -30,7 +31,7 @@ export function Testimonials() {
               whileHover={{ y: -6 }}
               className="flex flex-col gap-5 rounded-3xl border border-black/5 bg-white p-7 shadow-card"
             >
-              <div className="flex gap-1" aria-label={`${t.rating} out of 5 stars`}>
+              <div className="flex gap-1" aria-label={`${t.rating} ${dict.ratingAria}`}>
                 {Array.from({ length: t.rating }).map((_, idx) => (
                   <Star key={idx} size={16} className="fill-[#F6B800] text-[#F6B800]" />
                 ))}
@@ -41,11 +42,14 @@ export function Testimonials() {
               </blockquote>
 
               <figcaption className="mt-auto flex items-center gap-3">
-                <div
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-gradient font-display text-sm font-bold text-white"
-                  aria-hidden="true"
-                >
-                  {t.name.charAt(0)}
+                <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full">
+                  <Image
+                    src={t.photo}
+                    alt={t.name}
+                    fill
+                    sizes="44px"
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-ink-strong">{t.name}</p>

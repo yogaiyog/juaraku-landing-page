@@ -1,18 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Map } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Bot,
+  Brain,
+  Map,
+  Sparkles,
+  Trophy,
+  type LucideIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FloatingBlob } from "@/components/ui/FloatingBlob";
 import { HeroIllustration } from "@/components/illustrations/HeroIllustration";
-import { highlights } from "@/lib/data";
+import { whatsappHref } from "@/lib/config";
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
+
+const highlightIcons: Record<string, LucideIcon> = {
+  "book-open": BookOpen,
+  brain: Brain,
+  bot: Bot,
+  trophy: Trophy,
+};
 
 /**
  * Hero section — the page's thesis: a confident, warm promise that coding
  * and AI fluency is the defining skill for the next generation, paired with
  * a layered floating illustration rather than a 3D scene.
  */
-export function Hero() {
+export function Hero({ dict }: { dict: Dictionary["hero"] }) {
   return (
     <section
       id="top"
@@ -32,41 +49,48 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="flex flex-col items-start gap-6"
         >
-          <span className="eyebrow">
-           Preparing Kids for an AI-Powered Future 🚀 
-          </span>
+          <span className="eyebrow">{dict.eyebrow}</span>
 
           <h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl">
-            AI &amp; Coding Education 
+            {dict.title.pre}{" "}
             <span className="bg-brand-gradient bg-clip-text text-transparent">
-             {" "}for Future Champions
+              {dict.title.accent}
             </span>
           </h1>
 
-     <p className="max-w-xl text-lg leading-relaxed text-ink/80">
-  Learn coding, AI, and technology through exciting projects that prepare
-  children to create, innovate, and thrive in the future.
-</p>
+          <p className="max-w-xl text-lg leading-relaxed text-ink/80">
+            {dict.description}
+          </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Button href="#final-cta" icon={<ArrowRight size={18} />}>
-              Start Learning
+            <Button
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              icon={<ArrowRight size={18} />}
+            >
+              {dict.startLearning}
             </Button>
             <Button href="#roadmap" variant="secondary" icon={<Map size={18} />}>
-              View Learning Roadmap
+              {dict.viewRoadmap}
             </Button>
           </div>
 
           {/* Trust highlights */}
           <ul className="mt-6 grid w-full max-w-lg grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
-            {highlights.map(({ icon: Icon, title }) => (
-              <li key={title} className="flex flex-col items-start gap-2">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-blue-50 text-brand-blue-deep">
-                  <Icon size={22} strokeWidth={2} aria-hidden="true" />
-                </span>
-                <span className="whitespace-pre-line text-sm font-semibold leading-snug text-ink">{title}</span>
-              </li>
-            ))}
+            {dict.highlights.map(({ icon, title }) => {
+              const Icon = highlightIcons[icon] ?? Sparkles;
+              return (
+                <li key={title} className="flex flex-col items-start gap-2">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-blue-50 text-brand-blue-deep">
+                    <Icon size={22} strokeWidth={2} aria-hidden="true" />
+                  </span>
+                  <span className="whitespace-pre-line text-sm font-semibold leading-snug text-ink">
+                    {title}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </motion.div>
 

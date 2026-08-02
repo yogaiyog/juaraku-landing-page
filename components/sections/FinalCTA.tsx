@@ -1,18 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CalendarCheck } from "lucide-react";
+import { ArrowRight, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FloatingBlob } from "@/components/ui/FloatingBlob";
+import { whatsappHref } from "@/lib/config";
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
 /**
  * Final conversion moment — large, colorful, unmissable, with two paths
  * (commit now, or de-risk with a free trial) so parents at any stage of
  * decision-making have a clear next step.
  */
-export function FinalCTA() {
+export function FinalCTA({ dict }: { dict: Dictionary["finalCta"] }) {
   return (
-    <section id="final-cta" className="relative overflow-hidden py-20 sm:py-28">
+    <section id="final-cta" className="relative overflow-hidden pt-4 pb-20 sm:pb-28">
       <div className="section-shell">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,23 +28,28 @@ export function FinalCTA() {
 
           <div className="relative flex flex-col items-center gap-6">
             <h2 className="max-w-2xl font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
-              The Future Won&rsquo;t Wait.
+              {dict.titleLine1}
               <br />
-              Start Building It Today.
+              {dict.titleLine2}
             </h2>
-            <p className="max-w-xl text-lg text-white/80">
-              Give your child a head start in the age of AI — with real projects, real mentors,
-              and a roadmap built for where technology is actually headed.
-            </p>
+            <p className="max-w-xl text-lg text-white/80">{dict.description}</p>
 
             <div className="mt-2 flex flex-col gap-4 sm:flex-row">
-              <Button icon={<ArrowRight size={18} />}>Join JuaraKu</Button>
+              <Button
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<ArrowRight size={18} />}
+              >
+                {dict.joinCta}
+              </Button>
               <Button
                 variant="ghost"
+                href="#top"
                 className="!border-2 !border-white/40 !text-white hover:!bg-white/10"
-                icon={<CalendarCheck size={18} />}
+                icon={<ArrowUp size={18} />}
               >
-                Book a Free Trial
+                {dict.trialCta}
               </Button>
             </div>
           </div>
