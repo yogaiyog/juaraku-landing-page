@@ -373,6 +373,197 @@ export const en = {
     benefits: ["Live Classes", "Structured Curriculum", "Portfolio", "Certificate"],
     cta: "Free Trial",
   },
+  trial: {
+    metaTitlePrefix: "Trial Class Assessment",
+    metaDescription:
+      "A personalized trial class assessment for JuaraKu coding and AI, written by our mentors.",
+    form: {
+      eyebrow: "Trial Class Assessment",
+      title: "Build a Personalized Page for a Prospective Student",
+      description:
+        "Enter the student's name and the mentor's evaluation from the trial class to generate a personalized sales landing page.",
+      nameLabel: "Student Name",
+      namePlaceholder: "e.g. Raka",
+      nameError: "Please enter the student's name first.",
+      speedTitle: "Learning Speed",
+      speedHint: "How quickly the student understands instructions and completes tasks.",
+      conceptTitle: "Concept Understanding",
+      conceptHint: "How well the student understands new concepts introduced in class.",
+      problemTitle: "Problem Solving",
+      problemHint: "The student's ability to solve challenges independently.",
+      focusTitle: "Focus",
+      focusHint: "The student's ability to stay attentive and focused during class.",
+      scoreError: "Please select a score for all four assessment areas.",
+      submit: "Generate Landing Page",
+      backToPreview: "Back to Preview",
+    },
+    hero: {
+      eyebrow: "Thank You for Joining Us",
+      titlePre: "Welcome Back,",
+      titleAccent: "{name}!",
+      description:
+        "Thank you for attending your trial class with JuaraKu. Here is your personalized mentor assessment and the learning journey waiting for {name}.",
+      ctaTrial: "Continue Learning Journey",
+      ctaEdit: "Edit Assessment",
+    },
+    whyCoding: {
+      eyebrow: "Why Learn Coding & AI",
+      title: "Skills That Prepare Kids for the Future",
+      description:
+        "Coding and AI are not just subjects — they train children to think, create, and stay confident around technology.",
+      items: [
+        {
+          icon: "puzzle",
+          title: "Problem Solving",
+          description:
+            "Children learn to break challenges into small steps and find solutions systematically.",
+        },
+        {
+          icon: "brain",
+          title: "Logical Thinking",
+          description:
+            "Writing code trains children to think in a clear, ordered way with every decision they make.",
+        },
+        {
+          icon: "palette",
+          title: "Creativity",
+          description:
+            "From games to apps, children turn their ideas into real, shareable creations.",
+        },
+        {
+          icon: "bot",
+          title: "AI Literacy",
+          description:
+            "Children understand how AI works and learn to use it wisely to build and create.",
+        },
+        {
+          icon: "rocket",
+          title: "Future Careers",
+          description:
+            "Technology skills open doors in a world that is becoming more digital every day.",
+        },
+        {
+          icon: "shield-check",
+          title: "Digital Confidence",
+          description:
+            "Children feel comfortable and confident exploring technology — not just consuming it.",
+        },
+      ],
+      closing:
+        "Children who learn AI and coding today will be better prepared to create technology, not just consume it.",
+    },
+    pricing: {
+      eyebrow: "Programs & Pricing",
+      title: "Choose the Right Learning Plan",
+      description:
+        "Every plan includes live classes with a mentor and full access to the JuaraKu platform. The longer you subscribe, the more you save.",
+      cta: "Enroll Now",
+      featuredLabel: "Best Value",
+      savingsPrefix: "Save",
+      promoUntil: "Promo valid until {date}",
+      batchLabel: "Batch",
+      privateLabel: "Private",
+      batchNote: "Group class of up to 5 kids",
+      privateNote: "Private 1-on-1 class with a mentor",
+      batch: {
+        plans: [
+          {
+            name: "Monthly",
+            sessions: "4 sessions",
+            price: "Rp500rb",
+            period: "/month",
+            wasPrice: null,
+            savings: null,
+            featured: false,
+          },
+          {
+            name: "3-Month",
+            sessions: "12 sessions",
+            price: "Rp1.3jt",
+            period: "/3 months",
+            wasPrice: "Rp1.5jt",
+            savings: "Save Rp200rb",
+            featured: false,
+          },
+          {
+            name: "9-Month",
+            sessions: "36 sessions",
+            price: "Rp3jt",
+            period: "/9 months",
+            wasPrice: "Rp4.5jt",
+            savings: "Save Rp1.5jt",
+            featured: true,
+            promo: true,
+          },
+        ],
+      },
+      private: {
+        plans: [
+          {
+            name: "Monthly",
+            sessions: "4 sessions",
+            price: "Rp700rb",
+            period: "/month",
+            wasPrice: null,
+            savings: null,
+            featured: false,
+          },
+          {
+            name: "3-Month",
+            sessions: "12 sessions",
+            price: "Rp1.82jt",
+            period: "/3 months",
+            wasPrice: "Rp2.1jt",
+            savings: "Save Rp280rb",
+            featured: false,
+          },
+          {
+            name: "9-Month",
+            sessions: "36 sessions",
+            price: "Rp4.2jt",
+            period: "/9 months",
+            wasPrice: "Rp6.3jt",
+            savings: "Save Rp2.1jt",
+            featured: true,
+            promo: true,
+          },
+        ],
+      },
+    },
+    benefits: {
+      eyebrow: "Benefits",
+      title: "Everything You Get When You Join",
+      description:
+        "Beyond live classes, students get everything they need to learn, create, and track their progress.",
+      items: [
+        { icon: "smartphone", title: "Website & App Access" },
+        { icon: "video", title: "Live Class" },
+        { icon: "play-circle", title: "Recording" },
+        { icon: "hammer", title: "Project" },
+        { icon: "book-open", title: "Homework" },
+        { icon: "award", title: "Certificate" },
+        { icon: "folder-open", title: "Portfolio" },
+        { icon: "file-text", title: "Parent Report" },
+        { icon: "images", title: "Gallery" },
+        { icon: "users", title: "Community" },
+        { icon: "bot", title: "AI Pro" },
+      ],
+      aiProNote:
+        "AI Pro is available for students at the AI Explorer level and VibeCoder programs.",
+    },
+    assessment: {
+      eyebrow: "Assessment Result",
+      title: "Personalized Assessment for {name}",
+      description:
+        "An overview of {name}'s progress during the trial class, written directly by a JuaraKu mentor.",
+      nameLabel: "Student",
+      strengthsLabel: "Strengths",
+      growthLabel: "Areas for Growth",
+      conclusionLabel: "Conclusion",
+      copy: "Copy Assessment",
+      copied: "Copied",
+    },
+  },
   footer: {
     tagline:
       "Helping children become creators of technology through coding, AI, and project-based learning.",

@@ -391,6 +391,197 @@ finalCta: {
     benefits: ["Kelas Live", "Materi Terstruktur", "Portofolio", "Sertifikat"],
     cta: "Trial Gratis",
   },
+  trial: {
+    metaTitlePrefix: "Penilaian Kelas Percobaan",
+    metaDescription:
+      "Penilaian personal kelas percobaan coding dan AI untuk anak, disusun oleh mentor JuaraKu.",
+    form: {
+      eyebrow: "Penilaian Kelas Percobaan",
+      title: "Buat Landing Page Personal untuk Calon Siswa",
+      description:
+        "Masukkan nama siswa dan hasil evaluasi dari kelas percobaan untuk membuat halaman penawaran yang dipersonalisasi.",
+      nameLabel: "Nama Siswa",
+      namePlaceholder: "Contoh: Raka",
+      nameError: "Silakan masukkan nama siswa terlebih dahulu.",
+      speedTitle: "Kecepatan Belajar",
+      speedHint: "Seberapa cepat siswa memahami instruksi dan menyelesaikan tugas.",
+      conceptTitle: "Pemahaman Konsep",
+      conceptHint: "Seberapa baik siswa memahami konsep baru yang diajarkan.",
+      problemTitle: "Pemecahan Masalah",
+      problemHint: "Kemampuan siswa menyelesaikan tantangan secara mandiri.",
+      focusTitle: "Fokus",
+      focusHint: "Kemampuan siswa menjaga perhatian dan tetap fokus selama kelas.",
+      scoreError: "Silakan pilih nilai untuk keempat aspek penilaian.",
+      submit: "Buat Landing Page",
+      backToPreview: "Kembali ke Pratinjau",
+    },
+    hero: {
+      eyebrow: "Terima Kasih atas Partisipasinya",
+      titlePre: "Selamat Datang Kembali,",
+      titleAccent: "{name}!",
+      description:
+        "Terima kasih sudah mengikuti kelas percobaan bersama JuaraKu. Inilah penilaian personal dari mentor dan perjalanan belajar yang menanti {name}.",
+      ctaTrial: "Lanjutkan Perjalanan Belajar",
+      ctaEdit: "Ubah Penilaian",
+    },
+    whyCoding: {
+      eyebrow: "Mengapa Belajar Coding & AI",
+      title: "Keterampilan yang Membekali Anak untuk Masa Depan",
+      description:
+        "Coding dan AI bukan sekadar pelajaran — keduanya melatih cara berpikir, berkreasi, dan percaya diri dalam menghadapi teknologi.",
+      items: [
+        {
+          icon: "puzzle",
+          title: "Problem Solving",
+          description:
+            "Anak belajar memecah masalah menjadi langkah-langkah kecil dan menemukan solusi secara sistematis.",
+        },
+        {
+          icon: "brain",
+          title: "Berpikir Logis",
+          description:
+            "Menulis kode melatih anak berpikir runtut dan logis dalam setiap keputusan yang dibuat.",
+        },
+        {
+          icon: "palette",
+          title: "Kreativitas",
+          description:
+            "Dari game hingga aplikasi, anak menuangkan ide-idenya menjadi karya nyata yang bisa dibanggakan.",
+        },
+        {
+          icon: "bot",
+          title: "Literasi AI",
+          description:
+            "Anak memahami cara kerja AI dan belajar menggunakannya dengan bijak untuk berkarya.",
+        },
+        {
+          icon: "rocket",
+          title: "Karier Masa Depan",
+          description:
+            "Keterampilan teknologi membuka banyak peluang di dunia yang semakin digital.",
+        },
+        {
+          icon: "shield-check",
+          title: "Kepercayaan Diri Digital",
+          description:
+            "Anak merasa nyaman dan percaya diri mengeksplorasi teknologi, bukan sekadar menjadi pengguna.",
+        },
+      ],
+      closing:
+        "Anak yang belajar AI dan coding hari ini akan lebih siap menciptakan teknologi, bukan sekadar menggunakannya.",
+    },
+    pricing: {
+      eyebrow: "Program & Harga",
+      title: "Pilih Paket Belajar yang Tepat",
+      description:
+        "Semua paket mencakup kelas live bersama mentor dan akses penuh ke platform JuaraKu. Semakin lama berlangganan, semakin besar penghematannya.",
+      cta: "Daftar Sekarang",
+      featuredLabel: "Paling Hemat",
+      savingsPrefix: "Hemat",
+      promoUntil: "Promo berlaku s.d. {date}",
+      batchLabel: "Batch",
+      privateLabel: "Private",
+      batchNote: "1 kelas berisi maksimal 5 anak",
+      privateNote: "Kelas privat 1-on-1 bersama mentor",
+      batch: {
+        plans: [
+          {
+            name: "Bulanan",
+            sessions: "4 pertemuan",
+            price: "Rp500rb",
+            period: "/bulan",
+            wasPrice: null,
+            savings: null,
+            featured: false,
+          },
+          {
+            name: "3 Bulan",
+            sessions: "12 pertemuan",
+            price: "Rp1,3jt",
+            period: "/3 bulan",
+            wasPrice: "Rp1,5jt",
+            savings: "Hemat Rp200rb",
+            featured: false,
+          },
+          {
+            name: "9 Bulan",
+            sessions: "36 pertemuan",
+            price: "Rp3jt",
+            period: "/9 bulan",
+            wasPrice: "Rp4,5jt",
+            savings: "Hemat Rp1,5jt",
+            featured: true,
+            promo: true,
+          },
+        ],
+      },
+      private: {
+        plans: [
+          {
+            name: "Bulanan",
+            sessions: "4 pertemuan",
+            price: "Rp700rb",
+            period: "/bulan",
+            wasPrice: null,
+            savings: null,
+            featured: false,
+          },
+          {
+            name: "3 Bulan",
+            sessions: "12 pertemuan",
+            price: "Rp1,82jt",
+            period: "/3 bulan",
+            wasPrice: "Rp2,1jt",
+            savings: "Hemat Rp280rb",
+            featured: false,
+          },
+          {
+            name: "9 Bulan",
+            sessions: "36 pertemuan",
+            price: "Rp4,2jt",
+            period: "/9 bulan",
+            wasPrice: "Rp6,3jt",
+            savings: "Hemat Rp2,1jt",
+            featured: true,
+            promo: true,
+          },
+        ],
+      },
+    },
+    benefits: {
+      eyebrow: "Benefit",
+      title: "Semua yang Didapat Setelah Bergabung",
+      description:
+        "Selain kelas live, siswa juga mendapatkan fasilitas lengkap untuk belajar, berkarya, dan memantau perkembangan.",
+      items: [
+        { icon: "smartphone", title: "Akses Website & App" },
+        { icon: "video", title: "Live Class" },
+        { icon: "play-circle", title: "Recording" },
+        { icon: "hammer", title: "Project" },
+        { icon: "book-open", title: "Homework" },
+        { icon: "award", title: "Sertifikat" },
+        { icon: "folder-open", title: "Portfolio" },
+        { icon: "file-text", title: "Parent Report" },
+        { icon: "images", title: "Galeri" },
+        { icon: "users", title: "Komunitas" },
+        { icon: "bot", title: "AI Pro" },
+      ],
+      aiProNote:
+        "AI Pro tersedia untuk siswa di tingkat AI Explorer dan program VibeCoder.",
+    },
+    assessment: {
+      eyebrow: "Hasil Penilaian",
+      title: "Penilaian Personal untuk {name}",
+      description:
+        "Gambaran perkembangan {name} selama kelas percobaan, disusun langsung oleh mentor JuaraKu.",
+      nameLabel: "Siswa",
+      strengthsLabel: "Kelebihan",
+      growthLabel: "Area Pengembangan",
+      conclusionLabel: "Penutup",
+      copy: "Salin Penilaian",
+      copied: "Berhasil Disalin",
+    },
+  },
   footer: {
     tagline:
       "Membantu anak menjadi pencipta teknologi melalui coding, AI, dan pembelajaran berbasis proyek.",

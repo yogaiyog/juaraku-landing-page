@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -6,14 +7,20 @@ interface LogoProps {
 }
 
 /**
- * JuaraKu brand mark: a gold medal with a star, on a blue ribbon — standing
- * in for the provided logo asset. Built as inline SVG (not a raster image)
- * so it stays crisp at any size and can be recolored via currentColor if
- * ever needed. Swap for the real logo file when available.
+ * JuaraKu brand mark — rendered from /logo.png (the client-provided emblem).
+ * The original placeholder SVG is kept commented out below for reference.
  */
 export function Logo({ className, withWordmark = true }: LogoProps) {
   return (
     <div className={cn("flex items-center gap-2.5", className)}>
+      <Image
+        src="/logo.png"
+        alt="JuaraKu logo"
+        width={2413}
+        height={2888}
+        className="h-10 w-auto"
+      />
+      {/* Original placeholder SVG (kept for reference — replaced by /logo.png):
       <svg
         width="40"
         height="40"
@@ -23,10 +30,8 @@ export function Logo({ className, withWordmark = true }: LogoProps) {
         role="img"
         aria-label="JuaraKu logo"
       >
-
         <path d="M14 4L20 18L11 22L6 6Z" fill="#1E4AA8" />
         <path d="M26 4L20 18L29 22L34 6Z" fill="#1E78C8" />
-
         <circle cx="20" cy="24" r="13" fill="url(#medalGradient)" stroke="#F6B800" strokeWidth="1.5" />
         <circle cx="20" cy="24" r="9.5" fill="none" stroke="#FFFFFF" strokeOpacity="0.55" strokeWidth="1.2" />
         <path
@@ -40,6 +45,7 @@ export function Logo({ className, withWordmark = true }: LogoProps) {
           </linearGradient>
         </defs>
       </svg>
+      */}
       {withWordmark ? (
         <span className="font-display text-xl font-extrabold tracking-tight text-brand-blue-royal">
           Juara<span className="text-[#F6B800]">Ku</span>
