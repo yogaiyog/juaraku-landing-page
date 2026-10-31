@@ -6,15 +6,19 @@ import {
   BookOpen,
   Bot,
   Brain,
-  Map,
+  FileText,
+  Hammer,
+  LayoutGrid,
   Sparkles,
   Trophy,
+  Users,
+  Video,
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FloatingBlob } from "@/components/ui/FloatingBlob";
 import { HeroIllustration } from "@/components/illustrations/HeroIllustration";
-import { whatsappHref } from "@/lib/config";
+import { whatsappLink } from "@/lib/config";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
 const highlightIcons: Record<string, LucideIcon> = {
@@ -22,6 +26,10 @@ const highlightIcons: Record<string, LucideIcon> = {
   brain: Brain,
   bot: Bot,
   trophy: Trophy,
+  video: Video,
+  users: Users,
+  hammer: Hammer,
+  "file-text": FileText,
 };
 
 /**
@@ -35,11 +43,9 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
       id="top"
       className="relative overflow-hidden bg-hero-glow pb-16 pt-10 sm:pb-24 sm:pt-16"
     >
-      {/* Decorative background: blobs + floating code snippets */}
+      {/* Decorative background blobs */}
       <FloatingBlob color="gold" className="right-[-120px] top-[-100px] h-[360px] w-[360px]" />
       <FloatingBlob color="blue" className="left-[-140px] top-[220px] h-[420px] w-[420px]" />
-      <DecorativeCodeSnippet className="left-4 top-24 hidden lg:block" text="print('Hello, future!')" />
-      <DecorativeCodeSnippet className="right-6 top-[60%] hidden lg:block" text="if (curious) { learn() }" />
 
       <div className="section-shell relative grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
         {/* Copy column */}
@@ -62,28 +68,37 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
             {dict.description}
           </p>
 
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
             <Button
-              href={whatsappHref}
+              href={whatsappLink(dict.trialMessage)}
               target="_blank"
               rel="noopener noreferrer"
               icon={<ArrowRight size={18} />}
+              className="w-full sm:w-auto"
             >
               {dict.startLearning}
             </Button>
-            <Button href="#roadmap" variant="secondary" icon={<Map size={18} />}>
+            <Button
+              href="#kelas"
+              variant="secondary"
+              icon={<LayoutGrid size={18} />}
+              className="w-full sm:w-auto"
+            >
               {dict.viewRoadmap}
             </Button>
           </div>
 
           {/* Trust highlights */}
-          <ul className="mt-6 grid w-full max-w-lg grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
+          <ul className="mt-4 grid w-full max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
             {dict.highlights.map(({ icon, title }) => {
               const Icon = highlightIcons[icon] ?? Sparkles;
               return (
-                <li key={title} className="flex flex-col items-start gap-2">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-blue-50 text-brand-blue-deep">
-                    <Icon size={22} strokeWidth={2} aria-hidden="true" />
+                <li
+                  key={title}
+                  className="flex flex-col items-start gap-2 rounded-2xl border border-black/5 bg-white/70 p-3 shadow-soft backdrop-blur"
+                >
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue-50 text-brand-blue-deep">
+                    <Icon size={20} strokeWidth={2} aria-hidden="true" />
                   </span>
                   <span className="whitespace-pre-line text-sm font-semibold leading-snug text-ink">
                     {title}
@@ -98,18 +113,5 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
         <HeroIllustration />
       </div>
     </section>
-  );
-}
-
-function DecorativeCodeSnippet({ className, text }: { className?: string; text: string }) {
-  return (
-    <motion.div
-      aria-hidden="true"
-      className={`absolute z-0 select-none rounded-xl bg-white/80 px-4 py-2 font-mono text-xs text-brand-blue-deep shadow-soft ${className ?? ""}`}
-      animate={{ y: [0, -10, 0] }}
-      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-    >
-      {text}
-    </motion.div>
   );
 }

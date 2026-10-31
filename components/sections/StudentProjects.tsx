@@ -26,7 +26,6 @@ export function StudentProjects({ dict }: { dict: Dictionary["projects"] }) {
         <SectionHeading
           eyebrow={dict.eyebrow}
           title={dict.title}
-          description={dict.description}
         />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

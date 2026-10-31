@@ -5,7 +5,7 @@ import { ArrowRight, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FloatingBlob } from "@/components/ui/FloatingBlob";
 import { HeroIllustration } from "@/components/illustrations/HeroIllustration";
-import { whatsappHref } from "@/lib/config";
+import { whatsappLink } from "@/lib/config";
 import { interpolateName } from "@/lib/assessment/generator";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
@@ -51,7 +51,7 @@ export function PersonalizedHero({
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <Button
-              href={whatsappHref}
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               icon={<ArrowRight size={18} />}

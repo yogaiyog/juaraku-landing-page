@@ -22,89 +22,42 @@ metadata: {
   ui: {
     skipToContent: "Lewati ke konten",
     langSwitcherLabel: "Ganti bahasa",
+    whatsappFloat: "Chat Admin",
+    adminMessage: "Halo JuaraKu, saya ingin bertanya tentang kelas coding dan AI untuk anak.",
   },
   navbar: {
     mainNavLabel: "Navigasi utama",
     openMenuLabel: "Buka menu",
     closeMenuLabel: "Tutup menu",
-    startLearning: "Trial Gratis",
+    startLearning: "Coba Kelas Gratis",
     links: [
-      { label: "Tentang", href: "#why-ai" },
       { label: "Program", href: "#programs" },
-      { label: "Roadmap", href: "#roadmap" },
+      { label: "Cara Mulai", href: "#cara-belajar" },
+      { label: "Kelas & Harga", href: "#kelas" },
       { label: "FAQ", href: "#faq" },
     ],
   },
  hero: {
-  eyebrow: "🚀 Mempersiapkan Anak untuk Era AI",
+  eyebrow: "🚀 Kelas live online · Usia 7–15 tahun",
   title: {
-    pre: "Pendidikan AI dan Coding",
-    accent: "untuk Juara Masa Depan.",
+    pre: "Anak Bukan Cuma Main Game,",
+    accent: "Tapi Bisa Membuatnya.",
   },
   description:
-    "Belajar coding, AI, dan teknologi melalui proyek-proyek seru yang membantu anak menciptakan karya, berinovasi, dan siap menghadapi masa depan.",
-  startLearning: "Trial Gratis",
-  viewRoadmap: "Lihat Roadmap Belajar",
+    "Kelas coding dan AI live bersama mentor. Anak belajar logika, lalu membuat game, website, dan aplikasi AI buatannya sendiri, mulai dari nol, dalam kelas kecil yang seru.",
+  startLearning: "Coba Kelas Gratis",
+  viewRoadmap: "Lihat Pilihan Kelas",
+  trialMessage: "Halo JuaraKu, saya ingin mendaftarkan anak saya untuk kelas trial gratis.",
   highlights: [
-    { icon: "book-open", title: "Kurikulum Masa Depan" },
-    { icon: "brain", title: "Mentor Ahli" },
-    { icon: "bot", title: "Belajar Berbasis AI" },
-    { icon: "trophy", title: "Inovator Masa Depan" },
+    { icon: "video", title: "Live bareng mentor" },
+    { icon: "users", title: "Kelas kecil, maks 8 anak" },
+    { icon: "hammer", title: "Proyek nyata tiap bulan" },
+    { icon: "file-text", title: "Laporan progres untuk orang tua" },
   ],
 },
-  whyAI: {
-    eyebrow: "Mengapa Ini Penting",
-    title: "AI Mengubah Setiap Industri",
-    description:
-"",
-    industries: [
-      {
-        icon: "stethoscope",
-        title: "Kesehatan",
-        description: "Dokter menggunakan AI untuk mendeteksi penyakit lebih dini.",
-      },
-      {
-        icon: "line-chart",
-        title: "Keuangan",
-        description: "AI mendeteksi penipuan dan mengotomatiskan analisis keuangan.",
-      },
-      {
-        icon: "graduation-cap",
-        title: "Pendidikan",
-        description: "AI mempersonalisasi pembelajaran untuk setiap siswa.",
-      },
-      {
-        icon: "factory",
-        title: "Manufaktur",
-        description: "Pabrik pintar menggunakan otomatisasi AI.",
-      },
-      {
-        icon: "gamepad-2",
-        title: "Pengembangan Game",
-        description: "AI membantu developer membuat game lebih cepat.",
-      },
-      {
-        icon: "code-2",
-        title: "Pengembangan Perangkat Lunak",
-        description: "Developer membangun aplikasi bersama AI.",
-      },
-      {
-        icon: "palette",
-        title: "Industri Kreatif",
-        description: "Seniman dan desainer menggunakan AI setiap hari.",
-      },
-    ],
-    reframe: {
-      strike: "“Apakah AI akan menggantikan manusia?”",
-      lead: "Pertanyaan yang sebenarnya adalah",
-      question: "“Siapa yang tahu cara menggunakan AI secara efektif?”",
-    },
-  },
 programs: {
   eyebrow: "Program Unggulan",
   title: "Belajar Membangun Aplikasi dan Game dengan AI",
-  description:
-"",
   studentProjectsLabel: "Contoh Proyek",
   explorePrefix: "Pelajari",
   items: [
@@ -113,7 +66,7 @@ programs: {
       name: "VibeCoder App",
       tag: "App Development",
       description:
-"",
+        "Belajar membuat website dan aplikasi sungguhan, dari tampilan sampai logikanya, dengan AI sebagai asisten coding.",
       projects: [
         "Task Manager",
         "Website Sekolah",
@@ -143,8 +96,6 @@ programs: {
  roadmap: {
   eyebrow: "Roadmap Pembelajaran",
   title: "Perjalanan Belajar dari Dasar hingga Menjadi AI Creator",
-  description:
-"",
   chooseOne: "Pilih salah satu",
   graduateTitle: "Lulus Siap Berkarya",
   steps: [
@@ -212,8 +163,6 @@ programs: {
  parents: {
   eyebrow: "Mengapa Memilih JuaraKu",
   title: "Semua yang Dibutuhkan Anak untuk Belajar Coding dan AI",
-  description:
-    "Dari kurikulum hingga mentor, setiap aspek dirancang agar anak belajar dengan percaya diri dan terus berkembang.",
   features: [
     {
       icon: "hammer",
@@ -268,8 +217,6 @@ programs: {
   projects: {
   eyebrow: "Karya Siswa",
   title: "Belajar dengan Membangun Proyek Nyata",
-  description:
-    "Mulai dari game Scratch pertama hingga aplikasi berbasis AI, setiap proyek menunjukkan perkembangan kemampuan siswa di setiap tahap pembelajaran.",
   items: [
     {
       category: "Game Scratch",
@@ -340,6 +287,104 @@ programs: {
       },
     ],
   },
+  howItWorks: {
+    eyebrow: "Cara Mulai",
+    title: "4 Langkah Mudah untuk Mulai Belajar",
+    imageAlt: "Anak mengikuti kelas coding online dengan laptop dan headphone",
+    steps: [
+      {
+        title: "Daftar trial gratis",
+        description:
+          "Hubungi kami lewat WhatsApp, isi data singkat, lalu pilih jadwal yang cocok.",
+      },
+      {
+        title: "Ikut kelas trial 30 menit",
+        description:
+          "Anak langsung mencoba membuat proyek kecil bersama mentor secara live.",
+      },
+      {
+        title: "Terima penilaian dari mentor",
+        description:
+          "Anda mendapat penilaian personal: kekuatan anak, area yang perlu dikembangkan, dan rekomendasi level.",
+      },
+      {
+        title: "Pilih kelas & mulai belajar",
+        description:
+          "Pilih Batch, Semi Private, atau Private sesuai kebutuhan dan gaya belajar anak.",
+      },
+    ],
+    scheduleTitle: "Jadwal kelas",
+    schedule: [
+      { label: "Senin – Jumat", time: "15.00 – 20.00" },
+      { label: "Sabtu – Minggu", time: "09.00 – 20.00" },
+    ],
+  },
+  classes: {
+    eyebrow: "Pilihan Kelas & Harga",
+    title: "Pilih Format Kelas yang Paling Cocok",
+    perMonth: "/bulan",
+    featuredLabel: "Paling Fleksibel",
+    cta: "Pilih {name}",
+    ctaMessage: "Halo JuaraKu, saya tertarik dengan kelas {name}. Boleh minta info jadwalnya?",
+    includedLabel: "Semua kelas sudah termasuk",
+    included: [
+      "Live class bersama mentor",
+      "Rekaman kelas",
+      "Proyek & homework",
+      "Laporan progres orang tua",
+      "Sertifikat",
+      "Portofolio",
+    ],
+    packagesNote:
+      "Hemat Rp25rb/bulan dengan paket 3 bulan, dan Rp50rb/bulan dengan paket 6 bulan.",
+    options: [
+      {
+        id: "batch",
+        name: "Batch",
+        size: "5–8 anak per kelas",
+        price: "Rp250rb",
+        perSession: "Cuma Rp200rb/bulan dengan paket 6 bulan",
+        description:
+          "Belajar bareng teman seusia. Seru, kolaboratif, dan paling hemat.",
+        points: [
+          "Belajar dan berkolaborasi dalam grup",
+          "Kurikulum terstruktur per level",
+          "Cocok untuk anak yang suka suasana kelas",
+        ],
+        featured: false,
+      },
+      {
+        id: "semi-private",
+        name: "Semi Private",
+        size: "1–3 anak per kelas",
+        price: "Rp350rb",
+        perSession: "Cuma Rp300rb/bulan dengan paket 6 bulan",
+        description:
+          "Perhatian hampir seperti privat, dan materi tiap anak bisa berbeda sesuai levelnya.",
+        points: [
+          "Materi bisa beda untuk tiap anak",
+          "Mentor memantau setiap siswa",
+          "Cocok untuk kakak-adik atau teman dekat",
+        ],
+        featured: true,
+      },
+      {
+        id: "private",
+        name: "Private",
+        size: "1-on-1 dengan mentor",
+        price: "Rp450rb",
+        perSession: "Cuma Rp400rb/bulan dengan paket 6 bulan",
+        description:
+          "Fokus penuh pada satu anak. Kecepatan belajar sepenuhnya mengikuti anak.",
+        points: [
+          "Perhatian mentor 100% untuk anak",
+          "Materi bisa dipercepat atau diperdalam",
+          "Cocok untuk persiapan kompetisi",
+        ],
+        featured: false,
+      },
+    ],
+  },
   faq: {
   eyebrow: "FAQ",
   title: "Pertanyaan yang Sering Ditanyakan",
@@ -360,9 +405,24 @@ programs: {
         "Ya. Semua kelas berlangsung secara live bersama mentor sehingga siswa tetap mendapatkan bimbingan dan interaksi secara langsung.",
     },
     {
-      question: "Berapa jumlah siswa dalam satu kelas?",
+      question: "Apa bedanya kelas Batch, Semi Private, dan Private?",
       answer:
-        "Kami membatasi jumlah siswa agar setiap anak mendapatkan perhatian, pendampingan, dan umpan balik yang lebih optimal.",
+        "Kurikulum dan mentornya sama, yang berbeda jumlah siswa per kelas. Batch berisi 5–8 anak, Semi Private 1–3 anak dengan materi yang bisa berbeda untuk tiap anak, dan Private adalah kelas 1-on-1.",
+    },
+    {
+      question: "Kapan jadwal kelasnya?",
+      answer:
+        "Kelas tersedia Senin–Jumat pukul 15.00–20.00 dan Sabtu–Minggu pukul 09.00–20.00. Jadwal pastinya disepakati bersama saat pendaftaran.",
+    },
+    {
+      question: "Bagaimana kalau anak tidak bisa hadir?",
+      answer:
+        "Setiap kelas direkam, jadi anak bisa menonton ulang materi yang terlewat dan tetap mengikuti proyek kelasnya.",
+    },
+    {
+      question: "Bagaimana cara ikut kelas trial gratis?",
+      answer:
+        "Klik tombol \"Coba Kelas Gratis\" untuk menghubungi kami lewat WhatsApp. Trial berlangsung 30 menit secara live, dan setelahnya Anda mendapat penilaian personal dari mentor.",
     },
     {
       question: "Apakah siswa mendapatkan sertifikat?",
@@ -376,21 +436,6 @@ programs: {
     },
   ],
 },
-finalCta: {
-  titleLine1: "Jangan Hanya Mengikuti Masa Depan.",
-  titleLine2: "Jadilah Penciptanya.",
-  description:
-    "Bersama JuaraKu, anak belajar coding dan AI melalui proyek nyata, didampingi mentor berpengalaman, untuk membangun keterampilan yang dibutuhkan di era teknologi.",
-  joinCta: "Mulai Trial Gratis",
-  trialCta: "Kembali ke Atas",
-},
-  pricing: {
-    label: "Mulai dari",
-    price: "Rp500rb",
-    period: "/bulan",
-    benefits: ["Kelas Live", "Materi Terstruktur", "Portofolio", "Sertifikat"],
-    cta: "Trial Gratis",
-  },
   trial: {
     metaTitlePrefix: "Penilaian Kelas Percobaan",
     metaDescription:
@@ -479,16 +524,20 @@ finalCta: {
       featuredLabel: "Paling Hemat",
       savingsPrefix: "Hemat",
       promoUntil: "Promo berlaku s.d. {date}",
+      ctaMessage: "Halo JuaraKu, saya ingin mendaftarkan anak saya setelah kelas trial.",
+      planMessage: "Halo JuaraKu, saya ingin mendaftar kelas {class} paket {plan}.",
       batchLabel: "Batch",
+      semiPrivateLabel: "Semi Private",
       privateLabel: "Private",
-      batchNote: "1 kelas berisi maksimal 5 anak",
+      batchNote: "1 kelas berisi 5–8 anak",
+      semiPrivateNote: "1 kelas berisi 1–3 anak, materi bisa berbeda untuk tiap anak",
       privateNote: "Kelas privat 1-on-1 bersama mentor",
       batch: {
         plans: [
           {
             name: "Bulanan",
             sessions: "4 pertemuan",
-            price: "Rp500rb",
+            price: "Rp250rb",
             period: "/bulan",
             wasPrice: null,
             savings: null,
@@ -497,19 +546,51 @@ finalCta: {
           {
             name: "3 Bulan",
             sessions: "12 pertemuan",
-            price: "Rp1,3jt",
+            price: "Rp675rb",
             period: "/3 bulan",
-            wasPrice: "Rp1,5jt",
-            savings: "Hemat Rp200rb",
+            wasPrice: "Rp750rb",
+            savings: "Hemat Rp75rb",
             featured: false,
           },
           {
-            name: "9 Bulan",
-            sessions: "36 pertemuan",
-            price: "Rp3jt",
-            period: "/9 bulan",
-            wasPrice: "Rp4,5jt",
-            savings: "Hemat Rp1,5jt",
+            name: "6 Bulan",
+            sessions: "24 pertemuan",
+            price: "Rp1,2jt",
+            period: "/6 bulan",
+            wasPrice: "Rp1,5jt",
+            savings: "Hemat Rp300rb",
+            featured: true,
+            promo: true,
+          },
+        ],
+      },
+      semiPrivate: {
+        plans: [
+          {
+            name: "Bulanan",
+            sessions: "4 pertemuan",
+            price: "Rp350rb",
+            period: "/bulan",
+            wasPrice: null,
+            savings: null,
+            featured: false,
+          },
+          {
+            name: "3 Bulan",
+            sessions: "12 pertemuan",
+            price: "Rp975rb",
+            period: "/3 bulan",
+            wasPrice: "Rp1,05jt",
+            savings: "Hemat Rp75rb",
+            featured: false,
+          },
+          {
+            name: "6 Bulan",
+            sessions: "24 pertemuan",
+            price: "Rp1,8jt",
+            period: "/6 bulan",
+            wasPrice: "Rp2,1jt",
+            savings: "Hemat Rp300rb",
             featured: true,
             promo: true,
           },
@@ -520,7 +601,7 @@ finalCta: {
           {
             name: "Bulanan",
             sessions: "4 pertemuan",
-            price: "Rp700rb",
+            price: "Rp450rb",
             period: "/bulan",
             wasPrice: null,
             savings: null,
@@ -529,19 +610,19 @@ finalCta: {
           {
             name: "3 Bulan",
             sessions: "12 pertemuan",
-            price: "Rp1,82jt",
+            price: "Rp1,275jt",
             period: "/3 bulan",
-            wasPrice: "Rp2,1jt",
-            savings: "Hemat Rp280rb",
+            wasPrice: "Rp1,35jt",
+            savings: "Hemat Rp75rb",
             featured: false,
           },
           {
-            name: "9 Bulan",
-            sessions: "36 pertemuan",
-            price: "Rp4,2jt",
-            period: "/9 bulan",
-            wasPrice: "Rp6,3jt",
-            savings: "Hemat Rp2,1jt",
+            name: "6 Bulan",
+            sessions: "24 pertemuan",
+            price: "Rp2,4jt",
+            period: "/6 bulan",
+            wasPrice: "Rp2,7jt",
+            savings: "Hemat Rp300rb",
             featured: true,
             promo: true,
           },
@@ -590,9 +671,10 @@ finalCta: {
     rights: "Hak cipta dilindungi.",
     links: {
       company: [
-        { label: "Tentang", href: "#why-ai" },
         { label: "Program", href: "#programs" },
         { label: "Roadmap Belajar", href: "#roadmap" },
+        { label: "Cara Mulai", href: "#cara-belajar" },
+        { label: "Kelas & Harga", href: "#kelas" },
         { label: "FAQ", href: "#faq" },
       ],
       contact: [

@@ -1,11 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Laptop, Gamepad2, CheckCircle2 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
+
+const programImages: Record<string, { src: string; position: string }> = {
+  "vibecoder-app": {
+    src: "/images/programs/vibecoder-app.jpg",
+    position: "70% 35%",
+  },
+  "vibecoder-game": {
+    src: "/images/programs/vibecoder-game.jpg",
+    position: "50% 40%",
+  },
+};
 
 /**
  * Flagship Programs — the two capstone tracks students choose between:
@@ -18,7 +30,6 @@ export function FlagshipPrograms({ dict }: { dict: Dictionary["programs"] }) {
         <SectionHeading
           eyebrow={dict.eyebrow}
           title={dict.title}
-          description={dict.description}
         />
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -49,23 +60,32 @@ function ProgramCard({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ y: -8 }}
-      className="relative overflow-hidden rounded-4xl border border-black/5 bg-white p-8 shadow-card sm:p-10"
+      className="relative overflow-hidden rounded-4xl border border-black/5 bg-white shadow-card"
     >
-      {/* Decorative corner illustration */}
-      <div
-        className={cn(
-          "absolute -right-8 -top-8 flex h-32 w-32 items-center justify-center rounded-full opacity-90",
-          isBlue ? "bg-brand-blue-50" : "bg-brand-gold-light/25"
-        )}
-        aria-hidden="true"
-      >
-        {isBlue ? (
-          <Laptop size={40} className="text-brand-blue-deep" strokeWidth={1.75} />
-        ) : (
-          <Gamepad2 size={40} className="text-[#B8860B]" strokeWidth={1.75} />
-        )}
+      {/* Banner photo */}
+      <div className="relative h-48 w-full overflow-hidden sm:h-56">
+        <Image
+          src={programImages[program.id].src}
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover"
+          style={{ objectPosition: programImages[program.id].position }}
+        />
+        {/* Soft fade into the white card body */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/0 to-transparent" />
+        <span
+          className={cn(
+            "absolute bottom-3 left-6 flex h-14 w-14 items-center justify-center rounded-2xl shadow-card sm:left-10",
+            isBlue ? "bg-brand-gradient text-white" : "bg-gold-gradient text-brand-blue-royal"
+          )}
+          aria-hidden="true"
+        >
+          {isBlue ? <Laptop size={28} strokeWidth={2} /> : <Gamepad2 size={28} strokeWidth={2} />}
+        </span>
       </div>
 
+      <div className="p-8 sm:p-10">
       <span
         className={cn(
           "eyebrow",
@@ -107,6 +127,7 @@ function ProgramCard({
         <Button variant={isBlue ? "primary" : "secondary"} href="#roadmap">
           {dict.explorePrefix} {program.name}
         </Button>
+      </div>
       </div>
     </motion.div>
   );

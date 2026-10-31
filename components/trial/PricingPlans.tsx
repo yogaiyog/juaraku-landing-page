@@ -7,12 +7,14 @@ import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { IconBadge } from "@/components/ui/Card";
 import { FloatingBlob } from "@/components/ui/FloatingBlob";
-import { whatsappHref } from "@/lib/config";
+import { whatsappLink } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
-type PricingTab = "batch" | "private";
+type PricingTab = "batch" | "semiPrivate" | "private";
+
+const TABS: PricingTab[] = ["batch", "semiPrivate", "private"];
 
 const PROMO_DAYS = 7;
 
@@ -22,10 +24,10 @@ const localeTag: Record<Locale, string> = {
 };
 
 /**
- * Detailed pricing section for the personalized sales page — a Batch/Private
- * tab switcher over three plans (monthly / 3-month / 9-month) with
- * strikethrough original prices, savings badges, and a rolling promo deadline
- * (today + 7 days) on the 9-month plans, followed by the full benefit
+ * Detailed pricing section for the personalized sales page — a Batch/Semi
+ * Private/Private tab switcher over three plans (monthly / 3-month / 6-month)
+ * with strikethrough original prices, savings badges, and a rolling promo
+ * deadline (today + 7 days) on the 6-month plans, followed by the full benefit
  * checklist parents get when joining.
  */
 export function PricingPlans({
@@ -38,7 +40,16 @@ export function PricingPlans({
   const [tab, setTab] = useState<PricingTab>("batch");
   const [promoDate, setPromoDate] = useState<string | null>(null);
   const plans = dict.pricing[tab].plans;
-  const note = tab === "batch" ? dict.pricing.batchNote : dict.pricing.privateNote;
+  const labels: Record<PricingTab, string> = {
+    batch: dict.pricing.batchLabel,
+    semiPrivate: dict.pricing.semiPrivateLabel,
+    private: dict.pricing.privateLabel,
+  };
+  const notes: Record<PricingTab, string> = {
+    batch: dict.pricing.batchNote,
+    semiPrivate: dict.pricing.semiPrivateNote,
+    private: dict.pricing.privateNote,
+  };
 
   useEffect(() => {
     const end = new Date();
@@ -73,34 +84,24 @@ export function PricingPlans({
             role="group"
             aria-label={dict.pricing.eyebrow}
           >
-            <button
-              type="button"
-              onClick={() => setTab("batch")}
-              aria-pressed={tab === "batch"}
-              className={cn(
-                "rounded-full px-5 py-2 text-sm font-bold transition-colors",
-                tab === "batch"
-                  ? "bg-brand-gradient text-white shadow-gold"
-                  : "text-brand-blue-deep hover:bg-brand-blue-50"
-              )}
-            >
-              {dict.pricing.batchLabel}
-            </button>
-            <button
-              type="button"
-              onClick={() => setTab("private")}
-              aria-pressed={tab === "private"}
-              className={cn(
-                "rounded-full px-5 py-2 text-sm font-bold transition-colors",
-                tab === "private"
-                  ? "bg-brand-gradient text-white shadow-gold"
-                  : "text-brand-blue-deep hover:bg-brand-blue-50"
-              )}
-            >
-              {dict.pricing.privateLabel}
-            </button>
+            {TABS.map((t) => (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setTab(t)}
+                aria-pressed={tab === t}
+                className={cn(
+                  "rounded-full px-4 py-2 text-sm font-bold transition-colors sm:px-5",
+                  tab === t
+                    ? "bg-brand-gradient text-white shadow-gold"
+                    : "text-brand-blue-deep hover:bg-brand-blue-50"
+                )}
+              >
+                {labels[t]}
+              </button>
+            ))}
           </div>
-          <p className="text-sm font-semibold text-ink/60">{note}</p>
+          <p className="text-center text-sm font-semibold text-ink/60">{notes[tab]}</p>
         </div>
 
         {/* Plans */}
@@ -198,7 +199,11 @@ export function PricingPlans({
 
                 <div className="mt-auto">
                   <Button
-                    href={whatsappHref}
+                    href={whatsappLink(
+                      dict.pricing.planMessage
+                        .replace("{class}", labels[tab])
+                        .replace("{plan}", plan.name)
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     variant={isFeatured ? "primary" : "secondary"}

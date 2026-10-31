@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { WhyAI } from "@/components/sections/WhyAI";
 import { WhyParents } from "@/components/sections/WhyParents";
 import { LearningRoadmap } from "@/components/sections/LearningRoadmap";
 import { StudentProjects } from "@/components/sections/StudentProjects";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 import { generateAssessment } from "@/lib/assessment/generator";
 import { trialQuery, type TrialParams } from "@/lib/assessment/params";
 import type { Locale } from "@/lib/i18n/config";
@@ -83,7 +82,6 @@ export function TrialPage({
       <main>
         <PersonalizedHero dict={dict.trial} name={params.name} onEdit={() => setEditing(true)} />
         <PersonalizedAssessment dict={dict.trial} result={result} name={params.name} />
-        <WhyAI dict={dict.whyAI} />
         <WhyLearnAICoding dict={dict.trial.whyCoding} />
         <WhyParents dict={dict.parents} />
         <LearningRoadmap dict={dict.roadmap} />
@@ -91,9 +89,9 @@ export function TrialPage({
         <Testimonials dict={dict.testimonials} />
         <FAQ dict={dict.faq} />
         <PricingPlans dict={dict.trial} lang={lang} />
-        <FinalCTA dict={dict.finalCta} />
       </main>
       <Footer dict={dict.footer} />
+      <FloatingWhatsApp label={dict.ui.whatsappFloat} message={dict.ui.adminMessage} />
     </>
   );
 }

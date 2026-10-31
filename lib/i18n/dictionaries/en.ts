@@ -22,90 +22,42 @@ export const en = {
   ui: {
     skipToContent: "Skip to content",
     langSwitcherLabel: "Change language",
+    whatsappFloat: "Chat with us",
+    adminMessage: "Hello JuaraKu, I have a question about the kids coding and AI classes.",
   },
   navbar: {
     mainNavLabel: "Main navigation",
     openMenuLabel: "Open menu",
     closeMenuLabel: "Close menu",
-    startLearning: "Free Trial",
+    startLearning: "Try a Free Class",
     links: [
-      { label: "About", href: "#why-ai" },
       { label: "Programs", href: "#programs" },
-      { label: "Roadmap", href: "#roadmap" },
+      { label: "How It Works", href: "#cara-belajar" },
+      { label: "Classes & Pricing", href: "#kelas" },
       { label: "FAQ", href: "#faq" },
     ],
   },
   hero: {
-    eyebrow: "🚀 Preparing Kids for an AI-Powered Future",
+    eyebrow: "🚀 Live online classes · Ages 7–15",
     title: {
-      pre: "AI and Coding Education",
-      accent: "for Future Champions.",
+      pre: "Kids Don't Just Play Games.",
+      accent: "They Build Them.",
     },
     description:
-`Learn coding, AI, and technology through exciting projects that prepare
-  children to create, innovate, and thrive in the future.`,
-  startLearning: "Free Trial",
-  viewRoadmap: "View Learning Roadmap",
+      "Live coding and AI classes with a real mentor. Kids learn logic, then build their own games, websites, and AI apps, starting from zero, in small and fun classes.",
+    startLearning: "Try a Free Class",
+    viewRoadmap: "See Class Options",
+    trialMessage: "Hi JuaraKu, I'd like to sign my child up for a free trial class.",
     highlights: [
-      { icon: "book-open", title: "Future-Ready Curriculum" },
-      { icon: "brain", title: "Expert\nMentors" },
-      { icon: "bot", title: "AI-Native Learning" },
-      { icon: "trophy", title: "Future Innovators" },
+      { icon: "video", title: "Live with a mentor" },
+      { icon: "users", title: "Small classes, max 8 kids" },
+      { icon: "hammer", title: "Real projects every month" },
+      { icon: "file-text", title: "Progress reports for parents" },
     ],
-  },
-  whyAI: {
-    eyebrow: "Why It Matters",
-    title: "AI is Changing Every Industry",
-    description:
-      "From hospitals to game studios, AI is already reshaping how work gets done. The children learning to use it today will be the ones leading tomorrow.",
-    industries: [
-      {
-        icon: "stethoscope",
-        title: "Healthcare",
-        description: "Doctors use AI to detect diseases earlier.",
-      },
-      {
-        icon: "line-chart",
-        title: "Finance",
-        description: "AI detects fraud and automates financial analysis.",
-      },
-      {
-        icon: "graduation-cap",
-        title: "Education",
-        description: "AI personalizes learning for every student.",
-      },
-      {
-        icon: "factory",
-        title: "Manufacturing",
-        description: "Smart factories use AI automation.",
-      },
-      {
-        icon: "gamepad-2",
-        title: "Game Development",
-        description: "AI helps developers create games faster.",
-      },
-      {
-        icon: "code-2",
-        title: "Software Development",
-        description: "Developers build applications together with AI.",
-      },
-      {
-        icon: "palette",
-        title: "Creative Industry",
-        description: "Artists and designers use AI every day.",
-      },
-    ],
-    reframe: {
-      strike: "“Will AI replace people?”",
-      lead: "The real question is",
-      question: "“Who knows how to use AI effectively?”",
-    },
   },
   programs: {
     eyebrow: "Flagship Programs",
     title: "Where Learning Becomes Real Creation",
-    description:
-      "Every JuaraKu student works toward one of two capstone tracks — building portfolio-ready projects with real code and real AI tools.",
     studentProjectsLabel: "Student projects",
     explorePrefix: "Explore",
     items: [
@@ -144,8 +96,6 @@ export const en = {
   roadmap: {
     eyebrow: "The Journey",
     title: "A Clear Path From First Line of Code to AI Creator",
-    description:
-      "Every JuaraKu student follows the same proven sequence — building real skills, stage by stage, project by project.",
     chooseOne: "choose one",
     graduateTitle: "Graduate as a JuaraKu Champion",
     steps: [
@@ -197,8 +147,6 @@ export const en = {
   parents: {
     eyebrow: "Why Parents Choose JuaraKu",
     title: "Built for Trust, Designed for Results",
-    description:
-      "A curriculum, class structure, and mentor team designed so parents feel confident and children stay excited.",
     features: [
       {
         icon: "hammer",
@@ -250,8 +198,6 @@ export const en = {
   projects: {
     eyebrow: "Student Work",
     title: "Real Projects, Built by Real Students",
-    description:
-      "A glimpse of what JuaraKu students create — from their very first Scratch game to full AI-powered applications.",
     items: [
       {
         category: "Scratch Games",
@@ -322,6 +268,104 @@ export const en = {
       },
     ],
   },
+  howItWorks: {
+    eyebrow: "How It Works",
+    title: "4 Easy Steps to Get Started",
+    imageAlt: "A child joining an online coding class with a laptop and headphones",
+    steps: [
+      {
+        title: "Book a free trial",
+        description:
+          "Message us on WhatsApp, share a few details, and pick a time that works.",
+      },
+      {
+        title: "Join a 30-minute trial class",
+        description:
+          "Your child builds a small project live, together with a mentor.",
+      },
+      {
+        title: "Get the mentor's assessment",
+        description:
+          "Receive a personal assessment: your child's strengths, areas to grow, and a recommended level.",
+      },
+      {
+        title: "Choose a class and start",
+        description:
+          "Pick Batch, Semi Private, or Private to match your child's needs and learning style.",
+      },
+    ],
+    scheduleTitle: "Class schedule",
+    schedule: [
+      { label: "Monday – Friday", time: "15.00 – 20.00" },
+      { label: "Saturday – Sunday", time: "09.00 – 20.00" },
+    ],
+  },
+  classes: {
+    eyebrow: "Classes & Pricing",
+    title: "Choose the Class Format That Fits Best",
+    perMonth: "/month",
+    featuredLabel: "Most Flexible",
+    cta: "Choose {name}",
+    ctaMessage: "Hi JuaraKu, I'm interested in the {name} class. Could you share the schedule?",
+    includedLabel: "Every class includes",
+    included: [
+      "Live class with a mentor",
+      "Class recordings",
+      "Projects & homework",
+      "Parent progress report",
+      "Certificate",
+      "Portfolio",
+    ],
+    packagesNote:
+      "Save Rp25rb/month with the 3-month plan, and Rp50rb/month with the 6-month plan.",
+    options: [
+      {
+        id: "batch",
+        name: "Batch",
+        size: "5–8 kids per class",
+        price: "Rp250rb",
+        perSession: "Only Rp200rb/month on the 6-month plan",
+        description:
+          "Learn alongside kids the same age. Fun, collaborative, and the most affordable.",
+        points: [
+          "Learn and collaborate in a group",
+          "Structured curriculum for each level",
+          "Great for kids who enjoy a classroom vibe",
+        ],
+        featured: false,
+      },
+      {
+        id: "semi-private",
+        name: "Semi Private",
+        size: "1–3 kids per class",
+        price: "Rp350rb",
+        perSession: "Only Rp300rb/month on the 6-month plan",
+        description:
+          "Almost the attention of a private class, and each child can work on different material at their own level.",
+        points: [
+          "Material can differ for each child",
+          "The mentor tracks every student",
+          "Great for siblings or close friends",
+        ],
+        featured: true,
+      },
+      {
+        id: "private",
+        name: "Private",
+        size: "1-on-1 with a mentor",
+        price: "Rp450rb",
+        perSession: "Only Rp400rb/month on the 6-month plan",
+        description:
+          "Full focus on one child. The pace follows your child completely.",
+        points: [
+          "100% of the mentor's attention",
+          "Material can go faster or deeper",
+          "Great for competition preparation",
+        ],
+        featured: false,
+      },
+    ],
+  },
   faq: {
     eyebrow: "Questions, Answered",
     title: "Frequently Asked Questions",
@@ -342,9 +386,24 @@ export const en = {
           "Yes, classes are conducted live online with a real mentor, giving your child flexibility while still getting hands-on, human guidance.",
       },
       {
-        question: "How many students per class?",
+        question: "What's the difference between Batch, Semi Private, and Private?",
         answer:
-          "We intentionally keep class sizes small so every student gets individual attention and meaningful feedback on their projects.",
+          "The curriculum and mentors are the same; only the class size differs. Batch has 5–8 kids, Semi Private has 1–3 kids with material that can differ per child, and Private is 1-on-1.",
+      },
+      {
+        question: "When are classes held?",
+        answer:
+          "Classes run Monday–Friday from 15.00 to 20.00 and Saturday–Sunday from 09.00 to 20.00. The exact schedule is agreed together when you enroll.",
+      },
+      {
+        question: "What if my child misses a class?",
+        answer:
+          "Every class is recorded, so your child can rewatch anything they missed and keep up with the class project.",
+      },
+      {
+        question: "How do I join the free trial class?",
+        answer:
+          "Tap \"Try a Free Class\" to message us on WhatsApp. The trial is a 30-minute live class, and afterwards you receive a personal assessment from the mentor.",
       },
       {
         question: "Will students receive certificates?",
@@ -357,21 +416,6 @@ export const en = {
           "A laptop or desktop computer with a stable internet connection is recommended. Specific software requirements are shared with parents before class starts.",
       },
     ],
-  },
-  finalCta: {
-    titleLine1: "The Future Won’t Wait.",
-    titleLine2: "Start Building It Today.",
-    description:
-      "Give your child a head start in the age of AI — with real projects, real mentors, and a roadmap built for where technology is actually headed.",
-    joinCta: "Free Trial",
-    trialCta: "Back to Top",
-  },
-  pricing: {
-    label: "Starting at",
-    price: "Rp500rb",
-    period: "/month",
-    benefits: ["Live Classes", "Structured Curriculum", "Portfolio", "Certificate"],
-    cta: "Free Trial",
   },
   trial: {
     metaTitlePrefix: "Trial Class Assessment",
@@ -461,16 +505,20 @@ export const en = {
       featuredLabel: "Best Value",
       savingsPrefix: "Save",
       promoUntil: "Promo valid until {date}",
+      ctaMessage: "Hi JuaraKu, I'd like to enroll my child after the trial class.",
+      planMessage: "Hi JuaraKu, I'd like to enroll in the {class} class, {plan} plan.",
       batchLabel: "Batch",
+      semiPrivateLabel: "Semi Private",
       privateLabel: "Private",
-      batchNote: "Group class of up to 5 kids",
+      batchNote: "Group class of 5–8 kids",
+      semiPrivateNote: "Class of 1–3 kids, material can differ for each child",
       privateNote: "Private 1-on-1 class with a mentor",
       batch: {
         plans: [
           {
             name: "Monthly",
             sessions: "4 sessions",
-            price: "Rp500rb",
+            price: "Rp250rb",
             period: "/month",
             wasPrice: null,
             savings: null,
@@ -479,19 +527,51 @@ export const en = {
           {
             name: "3-Month",
             sessions: "12 sessions",
-            price: "Rp1.3jt",
+            price: "Rp675rb",
             period: "/3 months",
-            wasPrice: "Rp1.5jt",
-            savings: "Save Rp200rb",
+            wasPrice: "Rp750rb",
+            savings: "Save Rp75rb",
             featured: false,
           },
           {
-            name: "9-Month",
-            sessions: "36 sessions",
-            price: "Rp3jt",
-            period: "/9 months",
-            wasPrice: "Rp4.5jt",
-            savings: "Save Rp1.5jt",
+            name: "6-Month",
+            sessions: "24 sessions",
+            price: "Rp1.2jt",
+            period: "/6 months",
+            wasPrice: "Rp1.5jt",
+            savings: "Save Rp300rb",
+            featured: true,
+            promo: true,
+          },
+        ],
+      },
+      semiPrivate: {
+        plans: [
+          {
+            name: "Monthly",
+            sessions: "4 sessions",
+            price: "Rp350rb",
+            period: "/month",
+            wasPrice: null,
+            savings: null,
+            featured: false,
+          },
+          {
+            name: "3-Month",
+            sessions: "12 sessions",
+            price: "Rp975rb",
+            period: "/3 months",
+            wasPrice: "Rp1.05jt",
+            savings: "Save Rp75rb",
+            featured: false,
+          },
+          {
+            name: "6-Month",
+            sessions: "24 sessions",
+            price: "Rp1.8jt",
+            period: "/6 months",
+            wasPrice: "Rp2.1jt",
+            savings: "Save Rp300rb",
             featured: true,
             promo: true,
           },
@@ -502,7 +582,7 @@ export const en = {
           {
             name: "Monthly",
             sessions: "4 sessions",
-            price: "Rp700rb",
+            price: "Rp450rb",
             period: "/month",
             wasPrice: null,
             savings: null,
@@ -511,19 +591,19 @@ export const en = {
           {
             name: "3-Month",
             sessions: "12 sessions",
-            price: "Rp1.82jt",
+            price: "Rp1.275jt",
             period: "/3 months",
-            wasPrice: "Rp2.1jt",
-            savings: "Save Rp280rb",
+            wasPrice: "Rp1.35jt",
+            savings: "Save Rp75rb",
             featured: false,
           },
           {
-            name: "9-Month",
-            sessions: "36 sessions",
-            price: "Rp4.2jt",
-            period: "/9 months",
-            wasPrice: "Rp6.3jt",
-            savings: "Save Rp2.1jt",
+            name: "6-Month",
+            sessions: "24 sessions",
+            price: "Rp2.4jt",
+            period: "/6 months",
+            wasPrice: "Rp2.7jt",
+            savings: "Save Rp300rb",
             featured: true,
             promo: true,
           },
@@ -572,9 +652,10 @@ export const en = {
     rights: "All rights reserved.",
     links: {
       company: [
-        { label: "About", href: "#why-ai" },
         { label: "Programs", href: "#programs" },
         { label: "Learning Roadmap", href: "#roadmap" },
+        { label: "How It Works", href: "#cara-belajar" },
+        { label: "Classes & Pricing", href: "#kelas" },
         { label: "FAQ", href: "#faq" },
       ],
       contact: [

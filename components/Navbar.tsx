@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
-import { whatsappHref } from "@/lib/config";
+import { whatsappLink } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
@@ -62,7 +62,7 @@ export function Navbar({
         <div className="hidden items-center gap-3 md:flex">
           <LanguageSwitcher />
           <Button
-            href={whatsappHref}
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="!px-6 !py-2.5 !text-sm"
@@ -106,7 +106,7 @@ export function Navbar({
             </li>
             <li className="pt-2">
               <Button
-                href={whatsappHref}
+                href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"

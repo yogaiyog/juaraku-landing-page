@@ -157,14 +157,14 @@ No manual editing should be required.
 | --- | --- | --- |
 | 1 — Hero | `PersonalizedHero` | ✅ Implemented |
 | 2 — Trial Class Assessment | `PersonalizedAssessment` | ✅ Implemented |
-| 3 — Why Learn AI & Coding? | `WhyAI` (reused from home) + `WhyLearnAICoding` | ✅ Implemented |
+| 3 — Why Learn AI & Coding? | `WhyLearnAICoding` | ✅ Implemented |
 | 4 — Why Choose JuaraKu? | `WhyParents` (reused from home) | ✅ Implemented |
 | 5 — Learning Roadmap | `LearningRoadmap` (reused from home) | ✅ Implemented |
 | 6 — Student Projects | `StudentProjects` (reused from home) | ✅ Implemented |
 | 7 — Parent Testimonials | `Testimonials` (reused from home) | ✅ Implemented |
 | 8 — FAQ | `FAQ` (reused from home) | ✅ Implemented |
 | 9 — Pricing | `PricingPlans` (3 tiers + benefits) | ✅ Implemented |
-| 10 — Final Call To Action | `FinalCTA` (reused from home) | ✅ Implemented |
+| 10 — Final Call To Action | Removed; the floating WhatsApp button and the pricing CTAs cover it | — |
 
 ---
 
@@ -360,21 +360,27 @@ Suggested Questions
 
 Present pricing clearly while emphasizing value.
 
-Implemented on `/trial` via `PricingPlans` with a **Batch / Private** tab switcher:
+Implemented on `/trial` via `PricingPlans` with a **Batch / Semi Private / Private** tab switcher. The monthly price is the base price + Rp50rb; the 3-month plan takes Rp25rb/month off, and the 6-month plan brings it back to the base price (Rp50rb/month off). The home page shows the monthly prices in `ClassOptions`.
 
-**Batch** (1 kelas maksimal 5 anak):
+**Batch** (1 kelas berisi 5–8 anak), base price Rp200rb:
 
-- Bulanan — Rp500rb / 4 pertemuan / 1 bulan
-- 3 Bulan — ~~Rp1,5jt~~ Rp1,3jt (Hemat Rp200rb)
-- 9 Bulan — ~~Rp4,5jt~~ Rp3jt (Hemat Rp1,5jt) — featured "Paling Hemat"
+- Bulanan — Rp250rb / 4 pertemuan / 1 bulan
+- 3 Bulan — ~~Rp750rb~~ Rp675rb (Hemat Rp75rb)
+- 6 Bulan — ~~Rp1,5jt~~ Rp1,2jt (Hemat Rp300rb) — featured "Paling Hemat"
 
-**Private** (1-on-1 bersama mentor):
+**Semi Private** (1 kelas berisi 1–3 anak, materi bisa berbeda per anak), base price Rp300rb:
 
-- Bulanan — Rp700rb / 4 pertemuan / 1 bulan
-- 3 Bulan — ~~Rp2,1jt~~ Rp1,82jt (Hemat Rp280rb)
-- 9 Bulan — ~~Rp6,3jt~~ Rp4,2jt (Hemat Rp2,1jt) — featured "Paling Hemat"
+- Bulanan — Rp350rb / 4 pertemuan / 1 bulan
+- 3 Bulan — ~~Rp1,05jt~~ Rp975rb (Hemat Rp75rb)
+- 6 Bulan — ~~Rp2,1jt~~ Rp1,8jt (Hemat Rp300rb) — featured "Paling Hemat"
 
-Both 9-month plans (Batch & Private) show a **rolling promo deadline** — "Promo berlaku s.d. {date}", where `{date}` = today + 7 days (computed client-side, formatted per locale).
+**Private** (1-on-1 bersama mentor), base price Rp400rb:
+
+- Bulanan — Rp450rb / 4 pertemuan / 1 bulan
+- 3 Bulan — ~~Rp1,35jt~~ Rp1,275jt (Hemat Rp75rb)
+- 6 Bulan — ~~Rp2,7jt~~ Rp2,4jt (Hemat Rp300rb) — featured "Paling Hemat"
+
+All 6-month plans show a **rolling promo deadline** — "Promo berlaku s.d. {date}", where `{date}` = today + 7 days (computed client-side, formatted per locale).
 
 Benefits included (all plans): Akses Website & App · Live Class · Recording · Project · Homework · Sertifikat · Portfolio · Parent Report · Galeri · Komunitas · AI Pro (siswa tingkat AI & VibeCoder).
 

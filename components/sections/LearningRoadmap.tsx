@@ -18,7 +18,6 @@ export function LearningRoadmap({ dict }: { dict: Dictionary["roadmap"] }) {
         <SectionHeading
           eyebrow={dict.eyebrow}
           title={dict.title}
-          description={dict.description}
         />
 
         <ol className="relative mx-auto flex w-full max-w-2xl flex-col gap-0">
